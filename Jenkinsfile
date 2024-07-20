@@ -9,7 +9,11 @@ pipeline{
  
 		stage('OWASPDependency-CheckVulnerabilities'){
 			steps{
-				dependencyCheckadditionalArguments: '''-o'./'-s'./'-f 'ALL'--prettyPrint''',odcInstallation: 'OWASPDependency-CheckVulnerabilities'
+				dependencyCheckadditionalArguments: '''
+					-o'./'
+					-s'./'
+					-f 'ALL'
+					--prettyPrint''',odcInstallation: 'OWASP Dependency Check'
 				dependencyCheckPublisherpattern: 'dependency-check-report.xml'
 			}
 		}
